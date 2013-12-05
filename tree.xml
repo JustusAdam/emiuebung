@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25cm" height="25cm" viewBox="0 0 2500 2500">
+	<defs>
+		<symbol id="test">
+			<path d="M 1000 200 Q 950 400 800 500 Q 600 600 750 650 T 700 850
+					Q 400 1100 600 1100 T 500 1400 
+					Q 250 1600 450 1600 T 850 1600
+					Q 950 1600 950 1700" stroke="green" stroke-width="2" fill="none" />
+		</symbol>
+		<symbol id="kuller">
+			<circle r="50" cx="50" cy="50" fill="red"/>
+		</symbol>
+	</defs>
+	<use xlink:href="#test" />
+	<use xlink:href="#test" transform="matrix(-1,0,0,1,2000,0)"/>
+	<use xlink:href="#kuller" x="1000" y="450" />
+	<use xlink:href="#kuller" x="800" y="750" />
+	<use xlink:href="#kuller" x="1150" y="950" />
+	<use xlink:href="#kuller" x="650" y="1350" />
+	<use xlink:href="#kuller" x="1250" y="1400" />
+</svg>
+
