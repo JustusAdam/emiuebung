@@ -10,6 +10,9 @@
 		</symbol>
 		<symbol id="kuller">
 			<circle r="50" cx="50" cy="50" fill="red"/>
+		</symbol> 
+		<symbol id="shiningStar">
+			<path fill="gold" stroke="" stroke-width="2" d="M9,95h231l-187,136 71-220 71,220z"/>
 		</symbol>
 	</defs>
 	<use xlink:href="#test" />
@@ -19,5 +22,6 @@
 	<use xlink:href="#kuller" x="1150" y="950" />
 	<use xlink:href="#kuller" x="650" y="1350" />
 	<use xlink:href="#kuller" x="1250" y="1400" />
+	<use xlink:href="#shiningStar" transform="translate(875,19)"/>
 </svg>
 
