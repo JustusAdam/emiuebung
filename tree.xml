@@ -23,5 +23,8 @@
 	<use xlink:href="#kuller" x="650" y="1350" />
 	<use xlink:href="#kuller" x="1250" y="1400" />
 	<use xlink:href="#shiningStar" transform="translate(875,19)"/>
+	<use xlink:href="#shiningStar" transform="scale(0.5),translate(1500,2000)" />
+	<use xlink:href="#shiningStar" transform="scale(0.5),translate(2000, 1500)" />
+	<use xlink:href="#shiningStar" transform="scale(0.5),translate(2000,2500)" />
 </svg>
 
