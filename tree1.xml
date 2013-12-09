@@ -1,0 +1,152 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25cm" height="25cm" viewBox="0 0 2500 2500">
+        <defs>
+                <symbol id="test">
+                        <path d="M 1000 200 Q 950 400 800 500 Q 600 600 750 650 T 700 850
+                                        Q 400 1100 600 1100 T 500 1400
+                                        Q 250 1600 450 1600 T 850 1600
+                                        Q 950 1600 950 1700" stroke="green" stroke-width="2" fill="none" />
+                </symbol>
+                <symbol id="kuller">
+                        <circle r="50" cx="50" cy="50" />
+                </symbol>
+                <symbol id="shiningStarTurn">
+                        <polygon fill="gold" stroke="" stroke-width="2" points="100 0 42 180 195 70 5 70 158 180" >
+                   			<animateTransform attributeName="transform" 
+	                          attributeType="XML"
+	                          type="rotate" 
+	                          from="0 100 100" 
+	                          to="360 100 100" 
+	                          dur="10s"
+	                          repeatCount="indefinite"/>
+	                    </polygon>
+                </symbol>
+                <symbol id="shiningStar">
+                        <polygon fill="gold" stroke="" stroke-width="2" points="100 0 42 180 195 70 5 70 158 180" />
+                </symbol>
+                <script>
+                	<![CDATA[
+                	
+                		var kuller0 = 0;
+                		var kuller1 = 0;
+                		var kuller2 = 0;
+                		var kuller3 =0;
+                		var kuller4 =0;
+                		var stern0 =0;
+                		var stern1 =0;
+                		var stern2 =0;
+                		var stern3 =0;
+                		function changeColor(number){
+                			if(number == 1){
+                				
+	                			if(0==kuller1){
+			                		document.getElementById('kuller1').setAttribute("style", "fill:green");
+			                		kuller1 =1;
+	                			}else{
+	                				document.getElementById('kuller1').setAttribute("style", "fill:red");
+	                				kuller1= 0;
+	                			}
+                			}
+                			if(number == 0){
+                				
+	                			if(0==kuller0){
+			                		document.getElementById('kuller0').setAttribute("style", "fill:green");
+			                		kuller0 =1;
+	                			}else{
+	                				document.getElementById('kuller0').setAttribute("style", "fill:red");
+	                				kuller0= 0;
+	                			}
+                			}
+                			if(number == 2){
+                				
+	                			if(0==kuller2){
+			                		document.getElementById('kuller2').setAttribute("style", "fill:green");
+			                		kuller2 =1;
+	                			}else{
+	                				document.getElementById('kuller2').setAttribute("style", "fill:red");
+	                				kuller2= 0;
+	                			}
+                			}
+                			if(number == 3){
+                				
+	                			if(0==kuller3){
+			                		document.getElementById('kuller3').setAttribute("style", "fill:green");
+			                		kuller3 =1;
+	                			}else{
+	                				document.getElementById('kuller3').setAttribute("style", "fill:red");
+	                				kuller3= 0;
+	                			}
+                			}
+                			if(number == 4){
+                				
+	                			if(0==kuller4){
+			                		document.getElementById('kuller4').setAttribute("style", "fill:green");
+			                		kuller4 =1;
+	                			}else{
+	                				document.getElementById('kuller4').setAttribute("style", "fill:red");
+	                				kuller4= 0;
+	                			}
+                			}
+                		}
+                		function turnaround(number){
+                			if(number ==0){
+                				if(stern0 ==0){
+                					document.getElementById('stern0').setAttribute("xlink:href","#shiningStarTurn");
+                					stern0 = 1;
+                				} 
+                				else{
+       	         					document.getElementById('stern0').setAttribute("xlink:href","#shiningStar");
+       	         					stern0 = 0;
+       	         				}
+                			}
+                			if(number ==1){
+                				if(stern1 ==0){
+                				
+                					document.getElementById('stern1').setAttribute("xlink:href","#shiningStarTurn");
+                					stern1 =1;
+                				}
+                				else{
+       	         					document.getElementById('stern1').setAttribute("xlink:href","#shiningStar");
+       	         					stern1 =0;
+       	         				}
+                			}
+                			if(number ==2){
+                				if(stern2 ==0){
+                					document.getElementById('stern2').setAttribute("xlink:href","#shiningStarTurn");
+                					stern2 =1;
+                				}
+                				else{
+                				
+       	         					document.getElementById('stern2').setAttribute("xlink:href","#shiningStar");
+  									stern2=0;
+  								}
+                			}
+                			if(number ==3){
+                				if(stern3 ==0){
+                					document.getElementById('stern3').setAttribute("xlink:href","#shiningStarTurn");
+           							stern3 =1;
+           						}     				
+                				else{
+                					document.getElementById('stern3').setAttribute("xlink:href","#shiningStar");
+                					stern3 =0;
+                				}
+                			}
+                			
+                		}
+                		
+                	]]>
+                </script>
+        </defs>
+        <use xlink:href="#test" />
+        <use xlink:href="#test" transform="matrix(-1,0,0,1,2000,0)"/>
+        <use xlink:href="#kuller" x="1000" y="450" style="fill:red" id="kuller4" onclick="changeColor('4')"/>
+        <use xlink:href="#kuller" x="800" y="750" style="fill:red" id="kuller0" onclick="changeColor('0')"/>
+        <use xlink:href="#kuller" x="1150" y="950" style="fill:red" id="kuller1" onclick="changeColor('1')"/>
+        <use xlink:href="#kuller" x="650" y="1350"  style ="fill:red" id="kuller2" onclick="changeColor('2')"/>
+        <use xlink:href="#kuller" x="1250" y="1400" style="fill:red" id="kuller3" onclick="changeColor('3')" />
+        <use xlink:href="#shiningStar" transform="translate(900,60)" id='stern0' onmouseover="turnaround('0')" onmouseout="turnaround('0')"/>
+        <use xlink:href="#shiningStar" transform="scale(0.5),translate(1500,2000)" id='stern1'  onmouseover="turnaround('1')" onmouseout="turnaround('1')" />
+        <use xlink:href="#shiningStar" transform="scale(0.5),translate(2000, 1500)" id='stern2'  onmouseover="turnaround('2')" onmouseout="turnaround('2')"/>
+        <use xlink:href="#shiningStar" transform="scale(0.5),translate(2000,2500)" id='stern3'  onmouseover="turnaround('3')" onmouseout="turnaround('3')"/>
+</svg>
