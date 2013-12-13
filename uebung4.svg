@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+	"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1800px" height="1800px">
+	<title>Baums</title>
+	<script type="text/javascript">
+    <![CDATA[
+		function farbwechsel(id){
+			document.getElementById("kugel" + id).setAttribute("fill", "rgb(" + Math.round(Math.random()*256) + "," + Math.round(Math.random()*256) + "," + Math.round(Math.random()*256) + ")");
+		}
+		
+		var dreher = {};
+		function startdrehn(id, x, y){
+			if(dreher["stern" + id] && dreher["stern" + id].timer) return;
+			dreher["stern" + id] = {"rotat": dreher["stern" + id] ? dreher["stern" + id].rotat : 0, "timer": setInterval(function(){
+				document.getElementById("stern" + id).setAttribute("transform", "rotate(" + dreher["stern" + id].rotat + ", " + x + ", " + y + ") " + (id == 0 ? "scale(1.5)" : ""));
+				dreher["stern" + id].rotat += 2;
+			}, 30)};
+		}
+		
+		function stopdrehn(id){
+			if(dreher["stern" + id] && dreher["stern" + id].timer){
+				clearInterval(dreher["stern" + id].timer);
+				dreher["stern" + id].timer = null;
+			}
+		}
+    ]]>
+	</script>
+	<symbol id="halberbaum">
+		<path stroke="green" fill="none" stroke-width="5" d="M 1000 200 Q 950 400 800 500 Q 600 600 750 650 T 700 850 Q 400 1100 600 1100 T 500 1400 Q 250 1600 450 1600 L 850 1600 Q 950 1600 950 1700"/>	
+	</symbol>
+	<symbol id="kugel">
+		<circle id="kugelcircle" cx="50" cy="50" r="50" stroke="none" />
+	</symbol>
+	<symbol id="stern">
+		<polygon points="100,10 40,180 190,60 10,60 160,180"
+			fill="yellow" stroke="none" />
+	</symbol>
+	
+	<!-- Kugeln -->
+	<use xlink:href="#kugel" fill="red" id="kugel1" x="1000" y="450" onclick="farbwechsel(1)" />
+	<use xlink:href="#kugel" fill="red" id="kugel2" x="800" y="750" onclick="farbwechsel(2)" />
+	<use xlink:href="#kugel" fill="red" id="kugel3" x="1150" y="950" onclick="farbwechsel(3)" />
+	<use xlink:href="#kugel" fill="red" id="kugel4" x="650" y="1350" onclick="farbwechsel(4)" />
+	<use xlink:href="#kugel" fill="red" id="kugel5" x="1250" y="1400" onclick="farbwechsel(5)"/>
+	
+	<use xlink:href="#halberbaum" x="0" y="0"/>
+	<use xlink:href="#halberbaum" x="0" y="0" transform="translate(2000, 0) scale(-1, 1) "/>
+	
+	<use xlink:href="#stern" x="567" y="0" transform="scale(1.5)" id="stern1" onmouseenter="startdrehn(1, 1000, 200)" onmouseleave="stopdrehn(1)" />
+	<use xlink:href="#stern" x="1000" y="750" id="stern2" onmouseenter="startdrehn(2, 1100, 850)" onmouseleave="stopdrehn(2)" />
+	<use xlink:href="#stern" x="800" y="1200" id="stern3" onmouseenter="startdrehn(3, 900, 1300)" onmouseleave="stopdrehn(3)" />
+</svg>
